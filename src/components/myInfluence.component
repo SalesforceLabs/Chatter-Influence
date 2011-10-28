@@ -1,0 +1,28 @@
+<apex:component controller="influenceTable" allowDML="true" access="global" >
+  <apex:attribute access="global" assignto="{!userID}" name="userid" type="ID" required="true" description="user ID" />
+  <apex:attribute access="global" assignto="{!ipID}" name="influenceparent" type="ID" required="true" description="Influence Parent ID" />
+  
+  <table border="0" cellpadding="5" cellspacing="5">
+      <tr class="header">
+      	  <td class="metric">&nbsp;</td>
+          <td class="metric">{!u.firstname}</td>
+          <td class="metric">Overall Average</td>
+          <td class="metric">Overall Median</td>
+          <td class="metric">Department Rank<br/>(of {!deptSize})</td>
+          <td class="metric">Global Rank<br/>(of {!globalSize})</td>
+      </tr>
+      <apex:repeat value="{!Metrics}" var="m">
+          <tr>
+              <td style="text-align:right"><apex:outputtext value="{!m.metric}" escape="false" /></td>
+              <td style="text-align:center; font-weight: bold;">{!Round( m.myVal, if( m.isInteger, 0, 2 ))}</td> 
+              <td style="text-align:center">{!Round( m.avgNum, 2 )}</td>
+              <td style="text-align:center">{!Round( m.medNum, if( m.isInteger, 0, 2 ) )}</td>
+              <td style="text-align:center">{!m.deptRank}</td> 
+              <td style="text-align:center">{!m.myRank}</td>        
+          </tr>
+      </apex:repeat>
+  </table>
+  
+  <p>You are ranked <span class="bigNum">{!deptRank}</span> of <span class="bigNum">{!deptSize}</span> people in department {!if( u.department = null, '[no department]', u.department)}.</p>
+ 
+</apex:component>

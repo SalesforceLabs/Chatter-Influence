@@ -1,0 +1,148 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - Dec '10 -->
+<apex:page controller="influencecontroller" sidebar="false" cache="false" tabstyle="My_Influence__tab">
+
+	<apex:includescript value="{!URLFOR( $Resource.Influence, 'jquery-1.4.4.min.js' )}" />
+	<apex:includescript value="{!URLFOR( $Resource.Influence, 'jquery-ui-1.8.7.custom.min.js' )}" />
+	<apex:stylesheet value="{!URLFOR( $Resource.Influence, 'jquery-ui-1.8.7.custom.css' )}" />
+	
+	<div style="margin: 10px 0 10px 100px; color: gray; font-size: 14px; font-family: Verdana">
+		<a href="#" id="showInf">My Chatter Influence</a>
+		<apex:outputpanel rendered="{!Snapshots.size > 1}">
+			<a href="#" id="showLeaders">Influence Leaderboard</a>
+		</apex:outputpanel>
+	</div>
+	
+	<script type="text/javascript">
+		jQuery.noConflict();
+		
+		jQuery("a#showInf, a#showLeaders").button();
+		
+		jQuery("a#showInf").click( function() {
+			jQuery("div#leaders").hide();
+			jQuery("div#inf").fadeIn();
+		});
+		
+		jQuery("a#showLeaders").click( function() {
+			jQuery("div#inf").hide();
+			jQuery("div#leaders").fadeIn();
+		});
+	</script>
+	
+	<div id="inf">
+	    <apex:form id="theform">
+	    <apex:messages />
+	    
+	    <div style="width: 600px; margin: 50px auto;">
+	    <apex:sectionheader title="My Chatter Influence" />
+	    <apex:pageblock rendered="{!submitted}">
+	        <apex:outputtext value="{!mess}" escape="false" />
+	    </apex:pageblock>
+	    <apex:pageblock tabstyle="My_Influence__tab">
+	        Chatter Influence computes a weighted average of your Chatter activity and emails it to you.
+	        <br/><br/>
+	         <apex:commandbutton value="Email report for {!$User.Username}" action="{!sendInfluence}" rerender="theform" rendered="{!updated != ''}" />
+	         <apex:outputtext value="No Influence data available. Ask your admin to run an Influence Snapshot!" rendered="{!updated = ''}" />
+	    </apex:pageblock>
+	    
+	    <p style="font-family: Verdana; color: gray; font-size: 12px"><c:latestInfluence /></p>
+	    	    
+	    </div>
+	    </apex:form>
+    </div>
+    
+    <div id="leaders" style="display:none">
+    	<apex:form id="leaderForm">
+    	<div style="width: 600px; margin: 50px auto;">
+    		<apex:sectionheader title="Influence Leaderboard" />
+	        <apex:pageblock id="leaderboard">
+			<apex:pageblocksection showheader="false" columns="1">
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="snapshot" value="Snapshot" />
+					<apex:selectlist id="snapshot" value="{!ipID}" size="1" multiselect="false">
+						<apex:selectOptions value="{!Snapshots}" />
+						<apex:actionsupport event="onchange" action="{!calcDepartments}" rerender="leaderboard" />
+					</apex:selectlist>
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="dept" value="Department" />
+					<apex:selectlist id="dept" value="{!dept}" size="1" multiselect="false" disabled="{!ipID = ''}">
+						<apex:selectOptions value="{!Departments}" />
+						<apex:actionsupport event="onchange" action="{!changeDept}" rerender="leaderboard" />
+					</apex:selectlist>
+				</apex:pageblocksectionitem>
+				<apex:outputpanel id="deptTable">
+					<apex:pageblocktable value="{!rankings}" var="r" rendered="{!rankings.size > 0}">
+						<apex:column style="width:30px">
+							<apex:outputlink value="/{!r.User__c}" target="_new" title="{!r.user__r.name}">
+								<apex:image value="{!r.user__r.smallphotourl}" height="26" width="26" />
+							</apex:outputlink>
+						</apex:column>
+						<apex:column headervalue="Name">
+							<apex:outputlink value="/{!r.User__c}" target="_new">{!r.user__r.name}</apex:outputlink>
+						</apex:column>
+						<apex:column value="{!r.user__r.department}" />
+						<apex:column headervalue="ChatterRank" rendered="{!OR( ip.Leaderboard_Status__c = 'Display ChatterRanks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
+							<apex:outputtext style="font-size: 18px; color: gray;" value="{!round(r.ChatterRank__c, 0)}" />
+						</apex:column>
+						<apex:column headervalue="Global Rank" rendered="{!OR( ip.Leaderboard_Status__c = 'Display Global Ranks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
+							<apex:outputtext style="font-size: 18px; color: gray;" value="{!round(r.Ranking__c, 0)}" />
+						</apex:column>
+					</apex:pageblocktable>
+				</apex:outputpanel>	
+				</apex:pageblocksection>
+			</apex:pageblock>
+	    </div>
+	    </apex:form>
+    </div>
+    
+    <style type="text/css">
+		
+		/* Component containers
+		----------------------------------*/
+		.ui-widget { font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1.1em; }
+		.ui-widget .ui-widget { font-size: 1em; }
+		.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1em; }
+		.ui-widget-content { border: 1px solid #a6c9e2; background: #fcfdfd {!URLFOR( $Resource.Influence, 'ui-bg_inset-hard_100_fcfdfd_1x100.png' )} 50% bottom repeat-x; color: #222222; }
+		.ui-widget-content a { color: #222222; }
+		.ui-widget-header { border: 1px solid #4297d7; background: #5c9ccc {!URLFOR( $Resource.Influence, 'ui-bg_gloss-wave_55_5c9ccc_500x100.png' )} 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+		.ui-widget-header a { color: #ffffff; }
+		
+		/* Interaction states
+		----------------------------------*/
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #c5dbec; background: #dfeffc {!URLFOR( $Resource.Influence, 'ui-bg_glass_85_dfeffc_1x400.png' )} 50% 50% repeat-x; font-weight: bold; color: #2e6e9e; }
+		.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #2e6e9e; text-decoration: none; }
+		.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #79b7e7; background: #d0e5f5 {!URLFOR( $Resource.Influence, 'ui-bg_glass_75_d0e5f5_1x400.png' )} 50% 50% repeat-x; font-weight: bold; color: #1d5987; }
+		.ui-state-hover a, .ui-state-hover a:hover { color: #1d5987; text-decoration: none; }
+		.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #79b7e7; background: #f5f8f9 {!URLFOR( $Resource.Influence, 'ui-bg_inset-hard_100_f5f8f9_1x100.png' )} 50% 50% repeat-x; font-weight: bold; color: #e17009; }
+		.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #e17009; text-decoration: none; }
+		.ui-widget :active { outline: none; }
+		
+		/* Interaction Cues
+		----------------------------------*/
+		.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fad42e; background: #fbec88 {!URLFOR( $Resource.Influence, 'ui-bg_flat_55_fbec88_40x100.png' )} 50% 50% repeat-x; color: #363636; }
+		.ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
+		.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec {!URLFOR( $Resource.Influence, 'ui-bg_glass_95_fef1ec_1x400.png' )} 50% 50% repeat-x; color: #cd0a0a; }
+		.ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
+		.ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #cd0a0a; }
+		.ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary { font-weight: bold; }
+		.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,  .ui-widget-header .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal; }
+		.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none; }
+		
+		/* Icons
+		----------------------------------*/
+		
+		/* states and images */
+		.ui-icon { width: 16px; height: 16px; background-image: {!URLFOR( $Resource.Influence, 'ui-icons_469bdd_256x240.png' )}; }
+		.ui-widget-content .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_469bdd_256x240.png' )}; }
+		.ui-widget-header .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_d8e7f3_256x240.png' )}; }
+		.ui-state-default .ui-icon { background-image: {!URLFOR( $Resource.Influence, 'ui-icons_6da8d5_256x240.png' )}; }
+		.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_217bc0_256x240.png' )}; }
+		.ui-state-active .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_f9bd01_256x240.png' )}; }
+		.ui-state-highlight .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_2e83ff_256x240.png' )}; }
+		.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: {!URLFOR( $Resource.Influence, 'ui-icons_cd0a0a_256x240.png' )}; }
+		
+		/* Overlays */
+		.ui-widget-overlay { background: #aaaaaa {!URLFOR( $Resource.Influence, 'ui-bg_flat_0_aaaaaa_40x100.png' )} 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+		.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa {!URLFOR( $Resource.Influence, 'ui-bg_flat_0_aaaaaa_40x100.png' )} 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/*
+	</style>
+</apex:page>
