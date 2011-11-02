@@ -6,9 +6,9 @@
 	<apex:stylesheet value="{!URLFOR( $Resource.Influence, 'jquery-ui-1.8.7.custom.css' )}" />
 	
 	<div style="margin: 10px 0 10px 100px; color: gray; font-size: 14px; font-family: Verdana">
-		<a href="#" id="showInf">My Chatter Influence</a>
+		<a href="#" id="showInf">{!$Label.My_Chatter_Influence}</a>
 		<apex:outputpanel rendered="{!Snapshots.size > 1}">
-			<a href="#" id="showLeaders">Influence Leaderboard</a>
+			<a href="#" id="showLeaders">{!$Label.InfluenceLeaderboard}</a>
 		</apex:outputpanel>
 	</div>
 	
@@ -38,10 +38,10 @@
 	        <apex:outputtext value="{!mess}" escape="false" />
 	    </apex:pageblock>
 	    <apex:pageblock tabstyle="My_Influence__tab">
-	        Chatter Influence computes a weighted average of your Chatter activity and emails it to you.
+	        {!$Label.ChatterInfluenceComputes}
 	        <br/><br/>
-	         <apex:commandbutton value="Email report for {!$User.Username}" action="{!sendInfluence}" rerender="theform" rendered="{!updated != ''}" />
-	         <apex:outputtext value="No Influence data available. Ask your admin to run an Influence Snapshot!" rendered="{!updated = ''}" />
+	         <apex:commandbutton value="{!$Label.EmailReportFor} {!$User.Username}" action="{!sendInfluence}" rerender="theform" rendered="{!updated != ''}" />
+	         <apex:outputtext value="{!$Label.NoInfluenceData}" rendered="{!updated = ''}" />
 	    </apex:pageblock>
 	    
 	    <p style="font-family: Verdana; color: gray; font-size: 12px"><c:latestInfluence /></p>
@@ -53,18 +53,18 @@
     <div id="leaders" style="display:none">
     	<apex:form id="leaderForm">
     	<div style="width: 600px; margin: 50px auto;">
-    		<apex:sectionheader title="Influence Leaderboard" />
+    		<apex:sectionheader title="{!$Label.InfluenceLeaderboard}" />
 	        <apex:pageblock id="leaderboard">
 			<apex:pageblocksection showheader="false" columns="1">
 				<apex:pageblocksectionitem >
-					<apex:outputlabel for="snapshot" value="Snapshot" />
+					<apex:outputlabel for="snapshot" value="{!$Label.Snapshot}" />
 					<apex:selectlist id="snapshot" value="{!ipID}" size="1" multiselect="false">
 						<apex:selectOptions value="{!Snapshots}" />
 						<apex:actionsupport event="onchange" action="{!calcDepartments}" rerender="leaderboard" />
 					</apex:selectlist>
 				</apex:pageblocksectionitem>
 				<apex:pageblocksectionitem >
-					<apex:outputlabel for="dept" value="Department" />
+					<apex:outputlabel for="dept" value="{!$Label.Department}" />
 					<apex:selectlist id="dept" value="{!dept}" size="1" multiselect="false" disabled="{!ipID = ''}">
 						<apex:selectOptions value="{!Departments}" />
 						<apex:actionsupport event="onchange" action="{!changeDept}" rerender="leaderboard" />
@@ -77,14 +77,14 @@
 								<apex:image value="{!r.user__r.smallphotourl}" height="26" width="26" />
 							</apex:outputlink>
 						</apex:column>
-						<apex:column headervalue="Name">
+						<apex:column headervalue="{!$Label.Name_column}">
 							<apex:outputlink value="/{!r.User__c}" target="_new">{!r.user__r.name}</apex:outputlink>
 						</apex:column>
 						<apex:column value="{!r.user__r.department}" />
-						<apex:column headervalue="ChatterRank" rendered="{!OR( ip.Leaderboard_Status__c = 'Display ChatterRanks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
+						<apex:column headervalue="{!$Label.ChatterRank}" rendered="{!OR( ip.Leaderboard_Status__c = 'Display ChatterRanks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
 							<apex:outputtext style="font-size: 18px; color: gray;" value="{!round(r.ChatterRank__c, 0)}" />
 						</apex:column>
-						<apex:column headervalue="Global Rank" rendered="{!OR( ip.Leaderboard_Status__c = 'Display Global Ranks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
+						<apex:column headervalue="{!$Label.GlobalRank}" rendered="{!OR( ip.Leaderboard_Status__c = 'Display Global Ranks Only', ip.Leaderboard_Status__c = 'Display Global Ranks and ChatterRanks' )}">
 							<apex:outputtext style="font-size: 18px; color: gray;" value="{!round(r.Ranking__c, 0)}" />
 						</apex:column>
 					</apex:pageblocktable>

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AConfigurable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AConfigurable</shortDescription>
+        <value>A configurable method of ranking your most Influential* Chatter users.</value>
+    </labels>
+    <labels>
+        <fullName>APrivate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>APrivate</shortDescription>
+        <value>A private, confidential means of distributing personalized Influence reports to your users. By default, only admins can see everyone&apos;s Influence.</value>
+    </labels>
+    <labels>
+        <fullName>ATrackerObject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ATrackerObject</shortDescription>
+        <value>A tracker object that tracks every time a user requests his or her Influence score on the My Chatter Influence tab. You can enable or disable tracking Influence on the Influence Snapshot record.</value>
+    </labels>
+    <labels>
+        <fullName>AboutChatter_Influence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AboutChatter_Influence</shortDescription>
+        <value>About Chatter Influence</value>
+    </labels>
+    <labels>
+        <fullName>AdminSetup</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Admin Setup</shortDescription>
+        <value>Admin Setup</value>
+    </labels>
+    <labels>
+        <fullName>AnEasyWay</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AnEasyWay</shortDescription>
+        <value>An easy way to take configurable snapshots of your Chatter data for reporting or warehousing.</value>
+    </labels>
+    <labels>
+        <fullName>AvgInteractionsReceived_Day</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AvgInteractionsReceived_Day</shortDescription>
+        <value>Avg. Interactions Received/Day&lt;sup&gt;4&lt;/sup&gt;</value>
+    </labels>
+    <labels>
+        <fullName>AvgInteractionsReceived_Post</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AvgInteractionsReceived_Post</shortDescription>
+        <value>Avg. Interactions Received/Post</value>
+    </labels>
+    <labels>
+        <fullName>BeginInfluenceCalculation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BeginInfluenceCalculation</shortDescription>
+        <value>Click &quot;Begin Influence Calculation&quot;.</value>
+    </labels>
+    <labels>
+        <fullName>Begin_Influence_Calculation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Begin_Influence_Calculation</shortDescription>
+        <value>Begin Influence Calculation</value>
+    </labels>
+    <labels>
+        <fullName>CalculationCompleteCreate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CalculationCompleteCreate</shortDescription>
+        <value>Calculation complete. Create a new Influence Snapshot record if you\&apos;d like to re-calculate the data.</value>
+    </labels>
+    <labels>
+        <fullName>CalculationCompleteRefresh</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CalculationCompleteRefresh</shortDescription>
+        <value>Calculation complete. Refresh the page to see the results!</value>
+    </labels>
+    <labels>
+        <fullName>CalculationStatus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CalculationStatus</shortDescription>
+        <value>Calculation Status</value>
+    </labels>
+    <labels>
+        <fullName>ChatterInfluenceComputes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterInfluenceComputes</shortDescription>
+        <value>Chatter Influence computes a weighted average of your Chatter activity and emails it to you.</value>
+    </labels>
+    <labels>
+        <fullName>ChatterInfluenceCustomObjects</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterInfluenceCustomObjects</shortDescription>
+        <value>Chatter Influence custom objects</value>
+    </labels>
+    <labels>
+        <fullName>ChatterInfluenceIs</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterInfluenceIs</shortDescription>
+        <value>Chatter Influence is</value>
+    </labels>
+    <labels>
+        <fullName>ChatterInfluence_app_tabs</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterInfluence_app_tabs</shortDescription>
+        <value>Chatter Influence app tabs</value>
+    </labels>
+    <labels>
+        <fullName>ChatterRank</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterRank</shortDescription>
+        <value>ChatterRank</value>
+    </labels>
+    <labels>
+        <fullName>ChatterRank5</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterRank5</shortDescription>
+        <value>&lt;strong&gt;ChatterRank&lt;/strong&gt;&lt;sup&gt;5&lt;/sup&gt;</value>
+    </labels>
+    <labels>
+        <fullName>ChatterRank_Is_a_score</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChatterRank_Is_a_score</shortDescription>
+        <value>ChatterRank is a score from 1-100 (higher is better) and can be compared across orgs with at least 20 users. ChatterRank is a weighted average of five components (in descending order of weight: Average Interactions/Post, Posts Received, Average Interactions/Day, Followers, Comments Created).</value>
+    </labels>
+    <labels>
+        <fullName>CheckTheActiveCheckbox</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CheckTheActiveCheckbox</shortDescription>
+        <value>Check the &quot;active&quot; checkbox when you&apos;re ready to release these results to your users. Each user can request his or her score ONLY from the</value>
+    </labels>
+    <labels>
+        <fullName>CommentsCreated</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CommentsCreated</shortDescription>
+        <value>Comments Created</value>
+    </labels>
+    <labels>
+        <fullName>CommentsReceived</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CommentsReceived</shortDescription>
+        <value>Comments Received&lt;sup&gt;3&lt;/sup&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Comments_Received_is_the_total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Comments_Received_is_the_total</shortDescription>
+        <value>Comments Received is the total number of comments you have received on posts you created on all Chatter-enabled objects, excluding your own comments.</value>
+    </labels>
+    <labels>
+        <fullName>CouldnottFindYourInfluence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CouldnottFindYourInfluence</shortDescription>
+        <value>Couldn\&apos;t find your Influence record in the system.&lt;br/&gt;&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>CreateNewInfluenceSnapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CreateNewInfluenceSnapshot</shortDescription>
+        <value>Create a new Influence Snapshot record. Specify the time period of Chatter data to include.</value>
+    </labels>
+    <labels>
+        <fullName>Department</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Department</shortDescription>
+        <value>Department</value>
+    </labels>
+    <labels>
+        <fullName>DepartmentRank</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DepartmentRank</shortDescription>
+        <value>Department Rank</value>
+    </labels>
+    <labels>
+        <fullName>DeployOnlyTheMyChatter</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DeployOnlyTheMyChatter</shortDescription>
+        <value>Deploy only the My Chatter Influence tab to your users - the other tabs are for admins.</value>
+    </labels>
+    <labels>
+        <fullName>DeployTheChatterInfluence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DeployTheChatterInfluence</shortDescription>
+        <value>Deploy the Chatter Influence custom objects to your users</value>
+    </labels>
+    <labels>
+        <fullName>DeployThisTabToYourUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DeployThisTabToYourUsers</shortDescription>
+        <value>Deploy this tab to your users.</value>
+    </labels>
+    <labels>
+        <fullName>Dreamforce2010app</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Dreamforce2010app</shortDescription>
+        <value>in the Dreamforce 2010 app.</value>
+    </labels>
+    <labels>
+        <fullName>EmailReportFor</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EmailReportFor</shortDescription>
+        <value>Email report for</value>
+    </labels>
+    <labels>
+        <fullName>EmailedYourInfluenceScoreTo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EmailedYourInfluenceScoreTo</shortDescription>
+        <value>&lt;strong&gt;Success!&lt;/strong&gt; Emailed your Influence score to</value>
+    </labels>
+    <labels>
+        <fullName>FailedEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FailedEmail</shortDescription>
+        <value>Failed Email</value>
+    </labels>
+    <labels>
+        <fullName>FeelFree_to_edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FeelFree_to_edit</shortDescription>
+        <value>* Feel free to edit the Influence formula to your liking. The default formula shipping with Chatter Influence takes # of users into account, so Influence scores cannot generally be compared across orgs.</value>
+    </labels>
+    <labels>
+        <fullName>FreeOnTheAppexchange</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FreeOnTheAppexchange</shortDescription>
+        <value>free on the Appexchange!</value>
+    </labels>
+    <labels>
+        <fullName>GlobalRank</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>GlobalRank</shortDescription>
+        <value>Global Rank</value>
+    </labels>
+    <labels>
+        <fullName>Global_Rank</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Global_Rank</shortDescription>
+        <value>Global Rank</value>
+    </labels>
+    <labels>
+        <fullName>Hello</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hello</shortDescription>
+        <value>Hello</value>
+    </labels>
+    <labels>
+        <fullName>InfluenceLeaderboard</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>InfluenceLeaderboard</shortDescription>
+        <value>Influence Leaderboard</value>
+    </labels>
+    <labels>
+        <fullName>InfluenceSnapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>InfluenceSnapshot</shortDescription>
+        <value>Influence Snapshot (Read)</value>
+    </labels>
+    <labels>
+        <fullName>InfluenceSnapshotOnTheTab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>InfluenceSnapshotOnTheTab</shortDescription>
+        <value>Influence Snapshot on the &quot;My Chatter Influence&quot; tab.</value>
+    </labels>
+    <labels>
+        <fullName>InfluenceTracker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>InfluenceTracker</shortDescription>
+        <value>Influence Tracker (Read,Create)</value>
+    </labels>
+    <labels>
+        <fullName>Influence_Snapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Influence_Snapshot</shortDescription>
+        <value>Influence Snapshot</value>
+    </labels>
+    <labels>
+        <fullName>Influence_Snapshots</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Influence_Snapshots</shortDescription>
+        <value>Influence Snapshots</value>
+    </labels>
+    <labels>
+        <fullName>Influence_Tracker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Influence_Tracker</shortDescription>
+        <value>Influence Tracker</value>
+    </labels>
+    <labels>
+        <fullName>Interactions_Are_Comments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Interactions_Are_Comments</shortDescription>
+        <value>Interactions are comments or likes. Average Interactions Received/Day counts only those days in which you received at least one comment or like.</value>
+    </labels>
+    <labels>
+        <fullName>JustLittleBitLonger</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>JustLittleBitLonger</shortDescription>
+        <value>Just a little bit longer!</value>
+    </labels>
+    <labels>
+        <fullName>LikesReceived</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>LikesReceived</shortDescription>
+        <value>Likes Received</value>
+    </labels>
+    <labels>
+        <fullName>MyChatterPage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyChatterPage</shortDescription>
+        <value>my Chatter page</value>
+    </labels>
+    <labels>
+        <fullName>MyChatter_Influence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyChatter_Influence</shortDescription>
+        <value>My Chatter Influence</value>
+    </labels>
+    <labels>
+        <fullName>My_Chatter_Influence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>My_Chatter_Influence</shortDescription>
+        <value>My Chatter Influence</value>
+    </labels>
+    <labels>
+        <fullName>Name_column</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Name_column</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>NewFollowers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NewFollowers</shortDescription>
+        <value>New Followers</value>
+    </labels>
+    <labels>
+        <fullName>NoInfluenceData</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoInfluenceData</shortDescription>
+        <value>No Influence data available. Ask your admin to run an Influence Snapshot!</value>
+    </labels>
+    <labels>
+        <fullName>NoInfluenceDataAvailable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoInfluenceDataAvailable</shortDescription>
+        <value>No Influence data available. Ask your admin to run an Influence Snapshot!</value>
+    </labels>
+    <labels>
+        <fullName>NoInfluenceRecord</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoInfluenceRecord</shortDescription>
+        <value>No Influence Record</value>
+    </labels>
+    <labels>
+        <fullName>OrPostOn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrPostOn</shortDescription>
+        <value>or post on</value>
+    </labels>
+    <labels>
+        <fullName>OverallAverage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OverallAverage</shortDescription>
+        <value>Overall Average</value>
+    </labels>
+    <labels>
+        <fullName>OverallLeaderboard</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OverallLeaderboard</shortDescription>
+        <value>Overall Leaderboard</value>
+    </labels>
+    <labels>
+        <fullName>OverallMedian</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OverallMedian</shortDescription>
+        <value>Overall Median</value>
+    </labels>
+    <labels>
+        <fullName>PeopleInDepartment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PeopleInDepartment</shortDescription>
+        <value>people in department</value>
+    </labels>
+    <labels>
+        <fullName>PostsCreated</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PostsCreated</shortDescription>
+        <value>Posts Created&lt;sup&gt;1&lt;/sup&gt;</value>
+    </labels>
+    <labels>
+        <fullName>PostsReceived</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PostsReceived</shortDescription>
+        <value>Posts Received&lt;sup&gt;2&lt;/sup&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Posts_Created_is_the_total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Posts_Created_is_the_total</shortDescription>
+        <value>Posts Created is the total number of posts you&apos;ve made on all Chatter-enabled objects.</value>
+    </labels>
+    <labels>
+        <fullName>Posts_Received_is_the_total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Posts_Received_is_the_total</shortDescription>
+        <value>Posts Received is the total number of posts on your user profile that you did not create.</value>
+    </labels>
+    <labels>
+        <fullName>Questions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Questions</shortDescription>
+        <value>Questions?</value>
+    </labels>
+    <labels>
+        <fullName>ReadyToCalculate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ReadyToCalculate</shortDescription>
+        <value>Ready to calculate Chatter Influence. Total duration will depend on the amount of Chatter data in your environment as well as the time period you select.</value>
+    </labels>
+    <labels>
+        <fullName>RunningAnInfluenceSnapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RunningAnInfluenceSnapshot</shortDescription>
+        <value>Running an Influence Snapshot</value>
+    </labels>
+    <labels>
+        <fullName>Select_A_Snapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_A_Snapshot</shortDescription>
+        <value>-- Select a Snapshot --</value>
+    </labels>
+    <labels>
+        <fullName>Select_A_SnapshotToBrowseByDepartment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select_A_SnapshotToBrowseByDepartment</shortDescription>
+        <value>-- Select a Snapshot to browse by Department --</value>
+    </labels>
+    <labels>
+        <fullName>SendMeAnEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>&lt;a href=&quot;mailto:jhersh@salesforce.com&quot;&gt;Send me an email&lt;/a&gt; or post on &lt;a href=&quot;</shortDescription>
+        <value>&lt;a href=&quot;mailto:jhersh@salesforce.com&quot;&gt;Send me an email&lt;/a&gt; or post on &lt;a href=&quot;http://her.sh/dfchatter&quot; target=&quot;_new&quot;&gt;my Chatter page&lt;/a&gt; in the Dreamforce 2010 app.</value>
+    </labels>
+    <labels>
+        <fullName>Snapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Snapshot</shortDescription>
+        <value>Snapshot</value>
+    </labels>
+    <labels>
+        <fullName>SnapshotYouCreated</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SnapshotYouCreated</shortDescription>
+        <value>The main entry point for your users to request their Influence scores from the most recent active Influence Snapshot you created.</value>
+    </labels>
+    <labels>
+        <fullName>SortingData</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SortingData</shortDescription>
+        <value>Sorting data and calculating rankings.</value>
+    </labels>
+    <labels>
+        <fullName>StoresTheOverallAverages</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StoresTheOverallAverages</shortDescription>
+        <value>Stores the overall averages, medians, and settings for an individual snapshot. When you run a snapshot, you can specify whether you&apos;d like to include all-time Chatter data or only data from the last 1 Year, 6 Months, 3 Months, or 1 Month.</value>
+    </labels>
+    <labels>
+        <fullName>StoresallTheDetails</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StoresallTheDetails</shortDescription>
+        <value>Stores all the details for a given User in a given Influence Snapshot. By default, this data is private (via the My Chatter Influence tab) to that user and only admins can see everyone&apos;s influence.</value>
+    </labels>
+    <labels>
+        <fullName>TheMainEntryPoint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TheMainEntryPoint</shortDescription>
+        <value>The main entry point for creating a snapshot, calculating Influence, and viewing tracking and influence data.</value>
+    </labels>
+    <labels>
+        <fullName>TheNewestctiveSnapshot</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TheNewestctiveSnapshot</shortDescription>
+        <value>The newest active Snapshot record is the only data set that is distributed to your users on the My Chatter Influence tab.</value>
+    </labels>
+    <labels>
+        <fullName>ThisInfluenceReportIncludes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ThisInfluenceReportIncludes</shortDescription>
+        <value>This Influence report includes Chatter data</value>
+    </labels>
+    <labels>
+        <fullName>ThisReportWasPrepared</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ThisReportWasPrepared</shortDescription>
+        <value>This report was prepared especially for</value>
+    </labels>
+    <labels>
+        <fullName>ToSendYourInfluenceEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ToSendYourInfluenceEmail</shortDescription>
+        <value>&lt;strong&gt;Failed&lt;/strong&gt; to send your Influence email.&lt;br/&gt;&lt;br/&gt;</value>
+    </labels>
+    <labels>
+        <fullName>TotalActiveUsers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalActiveUsers</shortDescription>
+        <value>* Total # active users with at least one post or comment created or follower.</value>
+    </labels>
+    <labels>
+        <fullName>TotalComments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalComments</shortDescription>
+        <value>total comments, and</value>
+    </labels>
+    <labels>
+        <fullName>TotalPeople</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalPeople</shortDescription>
+        <value>* total people.</value>
+    </labels>
+    <labels>
+        <fullName>TotalPosts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotalPosts</shortDescription>
+        <value>total posts,</value>
+    </labels>
+    <labels>
+        <fullName>TotallikesWereCreated</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TotallikesWereCreated</shortDescription>
+        <value>total likes were created in this period!</value>
+    </labels>
+    <labels>
+        <fullName>TrackInfluenceReports</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>TrackInfluenceReports</shortDescription>
+        <value>Optionally, check the &quot;Track Influence Reports&quot; box to track when your users request their influence reports.</value>
+    </labels>
+    <labels>
+        <fullName>UserInfluence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>UserInfluence</shortDescription>
+        <value>User Influence (Read)</value>
+    </labels>
+    <labels>
+        <fullName>User_Influence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>User_Influence</shortDescription>
+        <value>User Influence</value>
+    </labels>
+    <labels>
+        <fullName>UsersCanAlsoVisit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>UsersCanAlsoVisit</shortDescription>
+        <value>Users can also visit this tab to read more about how their Influence score is calculated.</value>
+    </labels>
+    <labels>
+        <fullName>YouAreRanked</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>YouAreRanked</shortDescription>
+        <value>You are ranked</value>
+    </labels>
+    <labels>
+        <fullName>YouAreRankedOf</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>YouAreRankedOf</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>YouAreRanked_Of</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>YouAreRanked_Of</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>You_Are_Ranked</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>You_Are_Ranked</shortDescription>
+        <value>You are ranked</value>
+    </labels>
+    <labels>
+        <fullName>YouareOnThisTab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>YouareOnThisTab</shortDescription>
+        <value>You&apos;re on this tab!</value>
+    </labels>
+    <labels>
+        <fullName>Your_Chatter_Influence</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your_Chatter_Influence</shortDescription>
+        <value>Your Chatter Influence</value>
+    </labels>
+    <labels>
+        <fullName>newestACTIVE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>newestACTIVE</shortDescription>
+        <value>newest ACTIVE</value>
+    </labels>
+    <labels>
+        <fullName>of</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>of</shortDescription>
+        <value>of</value>
+    </labels>
+</CustomLabels>

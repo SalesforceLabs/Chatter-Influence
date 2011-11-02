@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Influence_Parent</value>
+    </caseValues>
+    <fields>
+        <help>スナップショットの算出準備ができた時にチェックしてください。</help>
+        <label>アクティブ</label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label>平均コメント数</label>
+        <name>Average_Comments_Created__c</name>
+    </fields>
+    <fields>
+        <label>平均コメント受信数</label>
+        <name>Average_Comments_Received__c</name>
+    </fields>
+    <fields>
+        <label>平均フォロワー</label>
+        <name>Average_Followers__c</name>
+    </fields>
+    <fields>
+        <label>平均インフルエンス</label>
+        <name>Average_Influence__c</name>
+    </fields>
+    <fields>
+        <label>平均投稿数</label>
+        <name>Average_Posts_Created__c</name>
+    </fields>
+    <fields>
+        <label>平均投稿受信数</label>
+        <name>Average_Posts_Received__c</name>
+    </fields>
+    <fields>
+        <label>平均 日別会話合計</label>
+        <name>Avg_Day_Comments_Sum__c</name>
+    </fields>
+    <fields>
+        <label>平均 会話/投稿</label>
+        <name>Avg_Interactions_Post__c</name>
+    </fields>
+    <fields>
+        <label>コメント　合計</label>
+        <name>Comments_Created_Sum__c</name>
+    </fields>
+    <fields>
+        <label>受信コメント　合計</label>
+        <name>Comments_Received_Sum__c</name>
+    </fields>
+    <fields>
+        <help>この算出で使われたChatterデータの終了時間</help>
+        <label>最終時間</label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <label>フォロワー合計</label>
+        <name>Followers_Sum__c</name>
+    </fields>
+    <fields>
+        <help>チェックした場合、インフルエンススコア算出にカスタムオブジェクトのChatter投稿、コメント、フォロー関係が含まれます。</help>
+        <label>カスタムオブジェクトフィードを含む</label>
+        <name>Include_Custom_Object_Feeds__c</name>
+    </fields>
+    <fields>
+        <label>インフルエンス合計</label>
+        <name>Influence_Sum__c</name>
+    </fields>
+    <fields>
+        <label>実行ジョブ</label>
+        <name>Jobs_Executed__c</name>
+    </fields>
+    <fields>
+        <help>私のインフルエンスページでリーダーボードがどのように見えるか</help>
+        <label>リーダーボード状態</label>
+        <name>Leaderboard_Status__c</name>
+        <picklistValues>
+            <masterLabel>Display ChatterRanks Only</masterLabel>
+            <translation>Chatterランクのみ表示</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Display Global Ranks Only</masterLabel>
+            <translation>グローバルランクのみ表示</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Display Global Ranks and ChatterRanks</masterLabel>
+            <translation>グローバルランクとChatterランク表示</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Leaderboard</masterLabel>
+            <translation>リーダーボード無</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>受信Like数</label>
+        <name>Likes_Received_Sum__c</name>
+    </fields>
+    <fields>
+        <help>同時実行される最大のAPEXバッチジョブ数です。よくわからなければ5に設定して下さい。</help>
+        <label>最大同時実行バッチ</label>
+        <name>Maximum_Concurrent_Batches__c</name>
+    </fields>
+    <fields>
+        <label>コメント数中央値</label>
+        <name>Median_Comments_Created__c</name>
+    </fields>
+    <fields>
+        <label>コメント受信数中央値</label>
+        <name>Median_Comments_Received__c</name>
+    </fields>
+    <fields>
+        <label>日別会話数中央値</label>
+        <name>Median_Day_Comments__c</name>
+    </fields>
+    <fields>
+        <label>フォロワー数中央値</label>
+        <name>Median_Followers__c</name>
+    </fields>
+    <fields>
+        <label>インフルエンス中央値</label>
+        <name>Median_Influence__c</name>
+    </fields>
+    <fields>
+        <label>会話/投稿　中央値</label>
+        <name>Median_Interactions_Post__c</name>
+    </fields>
+    <fields>
+        <label>受信Like数中央値</label>
+        <name>Median_Likes_Received__c</name>
+    </fields>
+    <fields>
+        <label>投稿中央値</label>
+        <name>Median_Posts_Created__c</name>
+    </fields>
+    <fields>
+        <label>投稿受信中央値</label>
+        <name>Median_Posts_Received__c</name>
+    </fields>
+    <fields>
+        <label>日別受信会話 平均</label>
+        <name>Overall_ACD__c</name>
+    </fields>
+    <fields>
+        <label>投稿合計</label>
+        <name>Posts_Created_Sum__c</name>
+    </fields>
+    <fields>
+        <label>受信投稿　合計</label>
+        <name>Posts_Received_Sum__c</name>
+    </fields>
+    <fields>
+        <help>コンマ区切りで除外対象のIDを入力します。ユーザID、レコードID、グループID、その他どのようなIDでも入力できます。</help>
+        <label>除外レコード</label>
+        <name>Records_to_Exclude__c</name>
+    </fields>
+    <fields>
+        <help>この算出で使われたChatterデータの開始時間</help>
+        <label>開始時間</label>
+        <name>Start_Time__c</name>
+    </fields>
+    <fields>
+        <label>状態</label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation>完了</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finalizing Influence</masterLabel>
+            <translation>インフルエンス決定中</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loading Chatter Data</masterLabel>
+            <translation>Chatterデータロード中</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready</masterLabel>
+            <translation>準備完了</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sorting Data</masterLabel>
+            <translation>データソート中</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ジョブ合計</label>
+        <name>Total_Jobs__c</name>
+    </fields>
+    <fields>
+        <label>インフルエンスレコード合計</label>
+        <name>Total_Records__c</name>
+    </fields>
+    <fields>
+        <help>チェックした場合、私のインフルエンスページからどのユーザがこのスナップショットのスコアをリクエストしたかがわかります。</help>
+        <label>インフルエンスメール送信</label>
+        <name>Track_Influence_Reports__c</name>
+    </fields>
+    <layouts>
+        <layout>Influence Parent Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Snapshot Results --></label>
+            <section>Snapshot Results</section>
+        </sections>
+        <sections>
+            <label><!-- Snapshot Settings --></label>
+            <section>Snapshot Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Snapshot Status --></label>
+            <section>Snapshot Status</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage>終了時間は開始時間より後である必要があります。</errorMessage>
+        <name>End_After_Start</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>同時実行バッチ数は1～5の間である必要があります。</errorMessage>
+        <name>Valid_Concurrent_Batches</name>
+    </validationRules>
+</CustomObjectTranslation>

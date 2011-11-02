@@ -21,8 +21,8 @@
 			<p><apex:outputtext value="{!statusmsg}"/></p>
 		</div>
 		<div style="float:left; width: 300px; margin-left: 20px; font-family: Verdana; font-size: 14px; color: gray">
-			<p><apex:commandbutton value="Begin Influence Calculation" action="{!doBatch}" rerender="ipform" rendered="{!ip.Status__c = 'Ready'}" /></p>
-			<p>Calculation Status:&nbsp;<apex:outputfield value="{!ip.Status__c}" /></p>
+			<p><apex:commandbutton value="{!$Label.Begin_Influence_Calculation}" action="{!doBatch}" rerender="ipform" rendered="{!ip.Status__c = 'Ready'}" /></p>
+			<p>{!$Label.CalculationStatus}:&nbsp;<apex:outputfield value="{!ip.Status__c}" /></p>
 			<div id="progressbar" style="height: 22px"></div>
 		</div>
 	</apex:form>
