@@ -86,7 +86,7 @@ public with sharing class influenceTable {
         }
         
         infLine il = new infLine();
-        il.metric = 'Posts Created<sup>1</sup>';
+        il.metric = system.label.PostsCreated;
         il.avgNum = ip.posts_created_sum__c / ip.total_records__c;
         il.medNum = ip.median_posts_created__c;
         il.myVal = myInf.posts_created__c;
@@ -112,7 +112,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Posts Received<sup>2</sup>';
+        il.metric = system.label.PostsReceived;
         il.avgNum = ip.posts_received_sum__c / ip.total_records__c;
         il.medNum = ip.median_posts_received__c;
         il.myVal = myInf.posts_received__c;
@@ -138,7 +138,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Comments Created';
+        il.metric = system.label.CommentsCreated;
         il.avgNum = ip.comments_created_sum__c / ip.total_records__c;
         il.medNum = ip.median_comments_created__c;
         il.myVal = myInf.comments_created__c;
@@ -164,7 +164,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Comments Received<sup>3</sup>';
+        il.metric = system.label.CommentsReceived;
         il.avgNum = ip.comments_received_sum__c / ip.total_records__c;
         il.medNum = ip.median_comments_received__c;
         il.myVal = myInf.comments_received__c;
@@ -190,7 +190,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Likes Received';
+        il.metric = system.label.LikesReceived;
         il.avgNum = ip.likes_received_sum__c / ip.total_records__c;
         il.medNum = ip.median_likes_received__c;
         il.myVal = myInf.likes_received__c;
@@ -216,7 +216,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'New Followers';
+        il.metric = system.label.NewFollowers;
         il.avgNum = ip.followers_sum__c / ip.total_records__c;
         il.medNum = ip.median_followers__c;
         il.myVal = myInf.followers__c;
@@ -242,7 +242,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Avg. Interactions Received/Post';
+        il.metric = system.label.AvgInteractionsReceived_Post;
         il.avgNum = ip.avg_interactions_post__c;
         il.medNum = ip.median_interactions_post__c;
         il.myVal = myInf.avg_interactions_post__c;
@@ -268,7 +268,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = 'Avg. Interactions Received/Day<sup>4</sup>';
+        il.metric = system.label.AvgInteractionsReceived_Day;
         il.avgNum = ip.avg_day_comments_sum__c / ip.total_records__c;
         il.medNum = ip.median_day_comments__c;
         il.myVal = myInf.comments_per_day__c;
@@ -294,7 +294,7 @@ public with sharing class influenceTable {
         }
         
         il = new infLine();
-        il.metric = '<strong>ChatterRank</strong><sup>5</sup>';
+        il.metric = system.label.ChatterRank5;
         il.avgNum = null; //ip.influence_sum__c / ip.total_records__c;
         il.medNum = null; // ip.median_influence__c;
         il.myVal = myInf.chatterrank__c;

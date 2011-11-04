@@ -35,10 +35,10 @@ public with sharing class influenceBatcher {
             where id = :c.getId() ];
         
         if( ip.status__c == null || ip.status__c == '' || ip.status__c == 'Ready' ) {
-            statusmsg = 'Ready to calculate Chatter Influence. Total duration will depend on the amount of Chatter data in your environment as well as the time period you select.';
+            statusmsg = system.label.ReadyToCalculate;
             ip.status__c = 'Ready';
         } else if( ip.status__c == 'Complete' )
-            statusmsg = 'Calculation complete. Create a new Influence Snapshot record if you\'d like to re-calculate the data.';
+            statusmsg = system.label.CalculationCompleteCreate;
         
         sObs = new string[] {};
         
@@ -97,7 +97,7 @@ public with sharing class influenceBatcher {
         if( ip.status__c == null || ip.status__c == 'Ready' )
             ip.status__c = 'Loading Chatter Data';
         else if( ip.status__c == 'Complete' )
-            statusmsg = 'Calculation complete. Refresh the page to see the results!';
+            statusmsg = system.label.CalculationCompleteRefresh;
         
         integer launched = 0;
         Set<ID> exclude = new Set<ID> ();
@@ -166,7 +166,7 @@ public with sharing class influenceBatcher {
                 }
             }
         } else if( ip.status__c == 'Sorting Data' && ip.jobs_executed__c < sObs.size() + sortRanks.size() ) {   
-            statusmsg = 'Sorting data and calculating rankings.';
+            statusmsg = system.label.SortingData;
             integer c = MAX_SYSTEM_JOBS - currentJobs;
             
             if( c > MAX_JOBS ) c = MAX_JOBS;
@@ -199,7 +199,7 @@ public with sharing class influenceBatcher {
                 Database.executeBatch(ob);              
             }
         } else if( ip.status__c == 'Finalizing Influence' && ip.jobs_executed__c < sObs.size() + sortRanks.size() + 1 ) {
-            statusmsg = 'Just a little bit longer!';
+            statusmsg = system.label.JustLittleBitLonger;
             
             if( MAX_SYSTEM_JOBS - currentJobs > 0 ) {
                 // Final job - sort everyone by influence scores

@@ -6,10 +6,10 @@
       <tr class="header">
       	  <td class="metric">&nbsp;</td>
           <td class="metric">{!u.firstname}</td>
-          <td class="metric">Overall Average</td>
-          <td class="metric">Overall Median</td>
-          <td class="metric">Department Rank<br/>(of {!deptSize})</td>
-          <td class="metric">Global Rank<br/>(of {!globalSize})</td>
+          <td class="metric">{!$Label.OverallAverage}</td>
+          <td class="metric">{!$Label.OverallMedian}</td>
+          <td class="metric">{!$Label.DepartmentRank}<br/>({!$Label.of} {!deptSize})</td>
+          <td class="metric">{!$Label.Global_Rank}<br/>({!$Label.of} {!globalSize})</td>
       </tr>
       <apex:repeat value="{!Metrics}" var="m">
           <tr>
@@ -23,6 +23,6 @@
       </apex:repeat>
   </table>
   
-  <p>You are ranked <span class="bigNum">{!deptRank}</span> of <span class="bigNum">{!deptSize}</span> people in department {!if( u.department = null, '[no department]', u.department)}.</p>
+  <p>{!$Label.YouAreRanked} <span class="bigNum">{!deptRank}</span> {!$Label.YouAreRanked_Of} <span class="bigNum">{!deptSize}</span> {!$Label.PeopleInDepartment} {!if( u.department = null, '[no department]', u.department)}.</p>
  
 </apex:component>
