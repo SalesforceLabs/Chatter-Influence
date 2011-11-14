@@ -12,27 +12,27 @@ td.metric { text-align: right; }
 .bigNum { font-family: Verdana; font-weight: bold; font-size: 16px; }
 </style>
 
-<p>Hello {!recipient.firstname},</p>
+<p>{!$Label.Hello} {!recipient.firstname},</p>
 
 <p><c:latestInfluence /></p>
 
-<p>This report was prepared especially for {!recipient.username}!</p>
+<p>{!$Label.ThisReportWasPrepared} {!recipient.username}!</p>
 
 <span style="font-size:18px">Your ChatterRank:</span> <span style="font-size: 24px; color: #1797C0; font-weight:bold;">{!round(relatedto.ChatterRank__c,0)}/100</span>
 
 <c:myInfluence userid="{!recipient.id}" influenceparent="{!relatedto.Influence_Parent__c}" />
 
-<p>You are ranked <span class="bigNum">{!round(relatedto.Ranking__c,0)}</span> of <span class="bigNum">{!round(relatedto.influence_parent__r.Total_Records__c,0)}</span>* total people.</p>
+<p>{!$Label.You_Are_Ranked} <span class="bigNum">{!round(relatedto.Ranking__c,0)}</span> {!$Label.YouAreRankedOf} <span class="bigNum">{!round(relatedto.influence_parent__r.Total_Records__c,0)}</span>{!$Label.TotalPeople}</p>
 
-<p><span class="bigNum">{!round(relatedto.influence_parent__r.Posts_Created_Sum__c,0)}</span> total posts, <span class="bigNum">{!round(relatedto.influence_parent__r.Comments_Created_Sum__c,0)}</span> total comments, and <span class="bigNum">{!round(relatedto.influence_parent__r.Likes_Received_Sum__c,0)}</span> total likes were created in this period!</p>
+<p><span class="bigNum">{!round(relatedto.influence_parent__r.Posts_Created_Sum__c,0)}</span> {!$Label.TotalPosts} <span class="bigNum">{!round(relatedto.influence_parent__r.Comments_Created_Sum__c,0)}</span> {!$Label.TotalComments} <span class="bigNum">{!round(relatedto.influence_parent__r.Likes_Received_Sum__c,0)}</span> {!$Label.TotallikesWereCreated}</p>
 
-<p>* Total # active users with at least one post or comment created or follower.</p>
+<p>{!$Label.TotalActiveUsers}</p>
 
-<p><sup>1</sup> Posts Created is the total number of posts you've made on all Chatter-enabled objects.</p>
-<p><sup>2</sup> Posts Received is the total number of posts on your user profile that you did not create.</p>
-<p><sup>3</sup> Comments Received is the total number of comments you have received on posts you created on all Chatter-enabled objects, excluding your own comments.</p>
-<p><sup>4</sup> Interactions are comments or likes. Average Interactions Received/Day counts only those days in which you received at least one comment or like.</p>
-<p><sup>5</sup> ChatterRank is a score from 1-100 (higher is better) and can be compared across orgs with at least 20 users. ChatterRank is a weighted average of five components (in descending order of weight: Average Interactions/Post, Posts Received, Average Interactions/Day, Followers, Comments Created).</p>
+<p><sup>1</sup> {!$Label.Posts_Created_is_the_total}</p>
+<p><sup>2</sup> {!$Label.Posts_Received_is_the_total}</p>
+<p><sup>3</sup> {!$Label.Comments_Received_is_the_total}</p>
+<p><sup>4</sup> {!$Label.Interactions_Are_Comments}</p>
+<p><sup>5</sup> {!$Label.ChatterRank_Is_a_score}</p>
 
 </messaging:htmlEmailBody>
 </messaging:emailTemplate>

@@ -24,7 +24,7 @@ public with sharing class influencecontroller {
                 return '';
             }
             
-            ret = 'This Influence report includes Chatter data'; 
+            ret = system.label.ThisInfluenceReportIncludes;
                 
             ret += ' from '+ latest.start_time__c.format('MMM-dd-yyyy h:mm a ', 'PST') +
                 ' to '+ latest.end_time__c.format('MMM-dd-yyyy h:mm a ', 'PST') +'.<br/>';
@@ -56,7 +56,7 @@ public with sharing class influencecontroller {
             }    
             
             if( parent == null ) {
-                mess = 'No Influence data available.';
+                mess = system.label.NoInfluenceDataAvailable;
                 return;
             }
                 
@@ -72,8 +72,8 @@ public with sharing class influencecontroller {
             infTracker = new Influence_Tracker__c( influence_snapshot__c = parent.id, user__c = u.id );
             
             if( myInf == null || myInf.isEmpty() ) {
-                mess += 'Couldn\'t find your Influence record in the system.<br/><br/>';
-                infTracker.error__c = 'No Influence Record';
+                mess += system.label.CouldnottFindYourInfluence;
+                infTracker.error__c = system.label.NoInfluenceRecord;
                 
                 try { 
                     if( parent.track_influence_reports__c )
@@ -91,7 +91,7 @@ public with sharing class influencecontroller {
             mail.setTargetObjectId( userinfo.getuserid() );
             mail.setWhatId( myInf[0].id );
             mail.setTemplateId( [select id from EmailTemplate where name ='Influence' limit 1].id ); 
-            mail.setSenderDisplayName( 'Your Chatter Influence');
+            mail.setSenderDisplayName( system.label.Your_Chatter_Influence);
             mail.setBccSender(false); 
             mail.setUseSignature(false);
             mail.setSaveAsActivity(false);
@@ -100,13 +100,13 @@ public with sharing class influencecontroller {
                 if( isTest ) throw new InfluenceException();
                 
                 Messaging.sendEmail( new Messaging.SingleEmailMessage[] { mail } );
-                mess += '<strong>Success!</strong> Emailed your Influence score to '+ u.email +'.<br/><br/>';
+                mess += system.label.EmailedYourInfluenceScoreTo+ u.email +'.<br/><br/>';
             } catch( Exception e ) {
                 ApexPages.addMessages(e);
                 
-                mess += '<strong>Failed</strong> to send your Influence email.<br/><br/>';
+                mess += system.label.ToSendYourInfluenceEmail;
                 
-                infTracker.error__c = 'Failed Email';
+                infTracker.error__c = system.label.FailedEmail;
                 
                 try { 
                     if( parent.track_influence_reports__c )
@@ -131,7 +131,7 @@ public with sharing class influencecontroller {
     public SelectOption[] getSnapshots() {
         SelectOption[] so = new SelectOption[] {};
         
-        so.add( new SelectOption( '', '-- Select a Snapshot --' ) );
+        so.add( new SelectOption( '', system.label.Select_A_Snapshot ) );
         
         for( Influence_Parent__c ip : [select id, start_time__c, end_time__c
             from Influence_Parent__c
@@ -159,9 +159,9 @@ public with sharing class influencecontroller {
         SelectOption[] so = new SelectOption[] {};
         
         if( ipID == '' )
-            so.add( new SelectOption( '', '-- Select a Snapshot to browse by Department --' ) );
+            so.add( new SelectOption( '', system.label.Select_A_SnapshotToBrowseByDepartment ) );
         else {
-            so.add( new SelectOption( '', 'Overall Leaderboard' ) );
+            so.add( new SelectOption( '', system.label.OverallLeaderboard ) );
         
             for( AggregateResult ar : [select user__r.department dept, count(id) from Influence__c
                 where influence_parent__c = :ipID
